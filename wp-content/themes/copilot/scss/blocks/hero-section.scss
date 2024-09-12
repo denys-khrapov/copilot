@@ -1,0 +1,31 @@
+.hero-section {
+  padding: 69px 0 115px;
+  @media (min-width: $pc) {
+    padding: 96px 0 128px;
+  }
+  .text-holder {
+    text-align: center;
+    line-height: 1.25;
+    letter-spacing: 0.64px;
+    @media (min-width: $pc) {
+      font-size: 18px;
+      line-height: 1.27;
+      letter-spacing: 1.26px;
+    }
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 20px;
+  .link{
+    @media (min-width: $pc) {
+        display: none;
+    }
+  }
+}

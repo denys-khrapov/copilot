@@ -1,0 +1,85 @@
+.btn {
+  color: $white;
+  font-family: $base-font;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.05;
+  display: inline-block;
+  width: fit-content;
+  vertical-align: middle;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 51px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  padding: 12px 21px;
+
+  &.btn-dark {
+    background-color: $dark;
+    &:hover {
+      background-color: $orange;
+    }
+  }
+  &.btn-orange {
+    background-color: $orange;
+    &:hover {
+      background-color: $dark;
+    }
+  }
+}
+
+.link {
+  color: $dark;
+  font-size: 15px;
+  font-family: $base-font;
+  font-weight: 400;
+  line-height: 1.05;
+  display: inline-block;
+  width: fit-content;
+  text-decoration: none;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    transform: translateY(3px);
+    background-image: url("img/icon-arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 12px;
+    transition: transform 0.3s;
+    margin-left: 6px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    background-color: $dark;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  @media (max-width: 992px) {
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+  &:hover {
+    &::after {
+      transform: translateY(3px) rotate(-45deg);
+    }
+    &::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+  &:not(:hover) {
+    &::before {
+      transform-origin: right;
+    }
+  }
+}
